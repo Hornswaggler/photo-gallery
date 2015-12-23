@@ -1,0 +1,42 @@
+<div on-scroll parallax-bg>
+
+    <div class="galleryContainer" style="">
+        <div ng-repeat="eachImg in vm.images" class="imageFrame">&nbsp;
+            <div class="boundingBox" style="position:relative;" ng-click="vm.selectImage(eachImg)">
+            
+                <div class="overlay">
+                    <div class="imageText">
+                        <div class="title">
+                            {{eachImg.title}}
+                        </div>
+                        <div class="desc">
+                            {{eachImg.desc}}
+                        </div>
+                    </div>
+                    <div class="transparency"></div>
+                </div>
+                
+                <img ng-src="{{eachImg.path}}"/>
+                
+            </div>
+        </div>
+        <div class="push">&nbsp;</div>
+    </div>
+    
+    <div class="carousel" ng-show="vm.selectedImage != null">
+        
+        <span ng-click="vm.closeCarousel()" class="closeCarousel glyphicon glyphicon-remove" aria-hidden="true"></span>
+        
+        <span ng-click="vm.loadPreviousImage()" class="carouselPrevious glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+        <span ng-click="vm.loadNextImage()" class="carouselNext glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        
+        <div class="transparency"></div>
+        <div class="title">
+            {{vm.selectedImage.title}}
+         </div>
+        <img ng-swipe-left="vm.loadNextImage()" ng-swipe-right="vm.loadPreviousImage()" ng-click="vm.clicked()" ng-src="{{vm.selectedImage.path}}"/>
+        <div class="desc">
+            {{vm.selectedImage.desc}}
+         </div>
+    </div>
+</div>

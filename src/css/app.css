@@ -1,0 +1,275 @@
+body{
+    background-image: url("../img/footer_lodyas.png");
+    min-width:320px;
+    /*overflow:hidden;*/
+}
+
+body, div, img{
+    margin:0;
+    padding:0;
+    display:block;
+}
+
+h2 {
+  font: 100 30px/30px 'Pacifico', Helvetica, sans-serif;
+  color: #ffffff;
+  text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
+}
+
+.header .transparency, .header .position{
+    position:fixed;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    top:0;
+    height:50px; 
+    max-width:967px;
+}
+
+.header .transparency{
+    border-radius:5px;
+    background-color:#000000;
+    opacity:0.5;
+    z-index:10;
+}
+
+.header h2{
+    margin-top:10px;
+    margin-left:5px;
+    float:left;
+}
+
+.header ul{
+    margin-right:5px
+}
+
+.header .position{
+    z-index:20;
+}
+
+.header .menu{
+    padding: 0;
+    float:right;
+}
+
+.header .menu li{
+    display: inline;
+}
+
+.header .menu li a {
+    color:#ffffff;
+    font: 100 20px/30px 'Pacifico', Helvetica, sans-serif;
+    padding:0px 10px;
+    text-decoration:none;
+}
+
+.header .menu li a:hover {
+    color:#c6cfd2;
+}
+
+.galleryContainer{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:50px;
+    padding-bottom:50px;
+    max-width:1000px;
+    position:relative;
+}
+
+.imageFrame{
+    width:33.33%;
+    float:left;
+    /*overflow:hidden;*/
+    text-align:center;
+    transition:all linear 0.1s;  
+}
+
+.imageFrame:hover{
+    transform: scale(1.1);
+}
+
+.imageFrame .boundingBox{
+    cursor:pointer;
+    height:200px;
+    width:300px;
+    background-color:black;
+    margin-left:auto;
+    margin-right:auto;
+    overflow:hidden;
+    border-radius:5px;
+}
+
+.imageFrame .overlay{
+    opacity:0;
+    width:100%;
+    height:100%;
+    position:absolute;
+    -webkit-transition:all linear 0.25s;
+    transition:all linear 0.25s;
+}
+
+.imageFrame .overlay:hover{
+    opacity:1;
+}
+
+.imageFrame .transparency{
+    background-color:#000000;
+    height:100%;
+    width:100%;
+    opacity:.5;
+}
+
+.imageFrame img{
+    width:100%;
+}
+
+.imageFrame .imageText{
+    position:absolute;
+    height:100%;
+    width:100%;
+    color:#ffffff;
+    z-index:10;
+}
+
+.imageText .title{
+    position:absolute;
+    right:0;
+    left:0;
+    top:10px;
+    font: 100 25px/30px 'Pacifico', Helvetica, sans-serif;
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
+}
+
+.imageText .desc{
+    position:absolute;
+    right:0;
+    left:0;
+    bottom:10px;
+    font: 100 20px/30px 'Pacifico', Helvetica, sans-serif;
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
+}
+
+
+.carousel .transparency{
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    margin-auto;
+    z-index:20;
+    background-color:#000000;
+    opacity:0.7;
+}
+
+.carousel img{
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    margin:auto;
+    z-index:20;
+    max-width:100%;
+    max-height:100%;
+}
+
+.carousel .carouselNext, .carousel .carouselPrevious, .carousel .closeCarousel{
+    cursor:pointer;
+}
+
+.carousel .carouselNext, .carousel .carouselPrevious, .carousel .closeCarousel{
+    position:fixed;
+    cursor:pointer;
+    color:#ffffff;
+    z-index:30;
+    transition:all linear 0.1s;
+}
+
+.carousel .carouselNext:hover, .carousel .carouselPrevious:hover, .carousel .closeCarousel:hover{
+    color:#c6cfd2;
+    transform: scale(1.1);
+}
+
+.carousel .closeCarousel{
+    top:0;
+    right:0;
+    margin:20px;
+    font-size: 2em;
+}
+
+.carousel .carouselNext, .carousel .carouselPrevious{
+    top:0;
+    bottom:0;
+    height:55px;
+    margin-top:auto;
+    margin-bottom:auto;
+    font-size: 5em;
+}
+
+.carousel .carouselNext{
+    right:0;
+    margin-right:5%;
+}
+
+.carousel .carouselPrevious{
+    left:0;
+    margin-left:5%;
+}
+
+.carousel .title{
+    text-align:center;
+    width: 75%;
+    position: fixed;
+    left: 50%;
+    margin-left: -37.5%;
+    z-index:40;
+    color:white;
+    top:0;
+    margin-top:5%;
+    font: 100 30px/30px 'Pacifico', Helvetica, sans-serif;
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
+}
+
+.carousel .desc{
+    text-align:center;
+    width: 75%;
+    position: fixed;
+    left: 50%;
+    margin-left: -37.5%;
+    z-index:40;
+    color:white;
+    bottom:0;
+    margin-bottom:5%;
+    font: 100 20px/30px 'Pacifico', Helvetica, sans-serif;
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
+}
+
+.push{
+    height:50px;
+}
+
+@media only screen and (max-width: 900px), only screen and (max-device-width: 900px) {
+     .imageFrame{
+        width:50%;
+     }
+}
+
+@media only screen  and (max-width: 600px), only screen and (max-device-width: 600px) {
+
+    h2{
+        font: 100 22px/30px 'Pacifico', Helvetica, sans-serif;
+        color: #ffffff;
+        text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
+    }
+    
+     .imageFrame{
+        width:100%;
+     }
+     
+     .imageFrame .boundingBox{
+        height:100%;
+        width:100%;
+     }
+}
