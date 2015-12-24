@@ -23,7 +23,7 @@
         <div class="push">&nbsp;</div>
     </div>
     
-    <div class="carousel" ng-show="vm.selectedImage != null">
+    <div class="carousel" ng-show="vm.showCarousel()">
         
         <span ng-click="vm.closeCarousel()" class="closeCarousel glyphicon glyphicon-remove" aria-hidden="true"></span>
         
@@ -31,12 +31,41 @@
         <span ng-click="vm.loadNextImage()" class="carouselNext glyphicon glyphicon-menu-right" aria-hidden="true"></span>
         
         <div class="transparency"></div>
-        <div class="title">
-            {{vm.selectedImage.title}}
+
+        <div ng-class="{'carouselImg' : true, 'showImgCarousel' : vm.showCarousel()}">
+         
+            <div class="title carouselText" ng-show="vm.showCarousel() && vm.getImagePosition()==0">
+                {{vm.selectedImage[0].title}}
+            </div>
+            <div class="title carouselText" ng-show="vm.showCarousel() && vm.getImagePosition()==1">
+                {{vm.selectedImage[1].title}}
+            </div>
+         
+            <img 
+                ng-class="{ 'carouselImg': true, 'carouselImgNext' : vm.nextImage, 'carouselImgPrevious' : vm.previousImage}" 
+                ng-show="vm.showCarousel() && vm.getImagePosition()==0" 
+                ng-swipe-left="vm.loadNextImage()" 
+                ng-swipe-right="vm.loadPreviousImage()" 
+                ng-click="vm.clicked()" 
+                ng-src="{{vm.selectedImage[0].path}}"
+            />
+            
+            <img 
+                ng-class="{ 'carouselImg': true, 'carouselImgNext' : vm.nextImage, 'carouselImgPrevious' : vm.previousImage}" 
+                ng-show="vm.showCarousel() && vm.getImagePosition()==1" 
+                ng-swipe-left="vm.loadNextImage()" 
+                ng-swipe-right="vm.loadPreviousImage()" 
+                ng-click="vm.clicked()" 
+                ng-src="{{vm.selectedImage[1].path}}"/>
+        </div>
+        
+        <div class="desc carouselText" ng-show="vm.showCarousel() && vm.getImagePosition()==0">
+            {{vm.selectedImage[0].desc}}
+        </div>
+         
+        <div class="desc carouselText" ng-show="vm.showCarousel() && vm.getImagePosition()==1">
+            {{vm.selectedImage[1].desc}}
          </div>
-        <img ng-swipe-left="vm.loadNextImage()" ng-swipe-right="vm.loadPreviousImage()" ng-click="vm.clicked()" ng-src="{{vm.selectedImage.path}}"/>
-        <div class="desc">
-            {{vm.selectedImage.desc}}
-         </div>
+         
     </div>
 </div>

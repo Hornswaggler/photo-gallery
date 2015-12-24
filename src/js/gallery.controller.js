@@ -10,13 +10,19 @@
     function GalleryController($scope, IMAGES, EVENTS){
         var vm = this;
         vm.images =	[];
+        vm.firstPosition = true;
         
-        vm.selectedImage = null;
+        vm.selectedImage = [];
         
         vm.selectImage = selectImage;
         vm.closeCarousel = closeCarousel;
         vm.loadNextImage = loadNextImage;
         vm.loadPreviousImage = loadPreviousImage;
+        vm.showCarousel = showCarousel;
+        vm.getImagePosition = getImagePosition;
+        
+        vm.nextImage = false;
+        vm.previousImage = false;
         
         $scope.$on(EVENTS.EVT_BOTTOM_REACHED, handle_EVT_BOTTOM_REACHED);
         
@@ -55,31 +61,55 @@
         }
         
         function selectImage(image){
-            vm.selectedImage = image;
+            vm.selectedImage[vm.getImagePosition()] = image;
         }
         
         function closeCarousel(){
-            vm.selectedImage = null;
+            vm.nextImage = false;
+            vm.previousImage = false;
+            vm.selectedImage = [];
         }
         
         function loadNextImage(){
-            if(vm.selectedImage.index == vm.images.length-1){
+            vm.nextImage = true;
+            vm.previousImage = false;
+            
+            if(vm.selectedImage[getImagePosition()].index == vm.images.length-1){
                 loadMoreImages();
             }
-            vm.selectedImage = vm.selectedImage.nextImage;
+            vm.selectedImage[toggleImagePosition()] = vm.selectedImage[getNextImagePosition()].nextImage;
         }
         
         function loadPreviousImage(){
-            if(vm.selectedImage.index == 0){
+            vm.nextImage = false;
+            vm.previousImage = true;
+            
+            if(vm.selectedImage[getImagePosition()].index == 0){
                 loadAllImages();
             }
-            vm.selectedImage = vm.selectedImage.previousImage;
+            vm.selectedImage[toggleImagePosition()] = vm.selectedImage[getNextImagePosition()].previousImage;
+        }
+        
+        function showCarousel(){
+            return vm.selectedImage.length != 0;
         }
         
         function handle_EVT_BOTTOM_REACHED(event, data){
             loadMoreImages();
             $scope.$apply();
         };
-
+        
+        function toggleImagePosition(){
+            vm.firstPosition = !vm.firstPosition;
+            return getImagePosition();
+        }
+        
+        function getImagePosition(){
+            return vm.firstPosition?0:1;
+        }
+        
+        function getNextImagePosition(){
+             return !vm.firstPosition?0:1;
+        }
     }
 })();

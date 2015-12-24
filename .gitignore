@@ -2,5 +2,6 @@ bower_components
 src/lib
 node_modules
 dist
+src/index.html
 src/index_1.0.html
 src/favicon.ico
