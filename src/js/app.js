@@ -4,7 +4,8 @@
     angular.module('app',['ngTouch','ngAnimate'])
         .constant("CONFIG", 
             {
-                PARALLAX : true,
+                //Disabled Until it's fixed..
+                PARALLAX : false,
                 PARALLAX_RATIO: 0.5
             }
         )
