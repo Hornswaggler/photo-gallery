@@ -1,5 +1,5 @@
 #PhotoGallery
 
-Documentation coming soon! :-)
+Documentation coming soon! :-) Maybe...
 
-http://stephenlinde.com/dev/
+http://stephenlinde.com
