@@ -5,9 +5,9 @@
         .module('app')
         .controller('GalleryController', GalleryController);
         
-    GalleryController.$inject = ['$scope','IMAGES','EVENTS'];
+    GalleryController.$inject = ['$scope','IMAGES','EVENTS', 'bio-service'];
     
-    function GalleryController($scope, IMAGES, EVENTS){
+    function GalleryController($scope, IMAGES, EVENTS, bioService){
         var vm = this;
         vm.images =	[];
         vm.firstPosition = true;
@@ -20,7 +20,8 @@
         vm.loadPreviousImage = loadPreviousImage;
         vm.showCarousel = showCarousel;
         vm.getImagePosition = getImagePosition;
-        
+        vm.displayBio = displayBio;
+
         vm.nextImage = false;
         vm.previousImage = false;
         
@@ -32,6 +33,10 @@
         
         function activate(){
             loadMoreImages();
+        }
+
+        function displayBio(){
+            bioService.displayBio();
         }
         
         function loadMoreImages(){

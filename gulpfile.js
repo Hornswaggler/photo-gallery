@@ -25,7 +25,7 @@ gulp.task('dependencies', function(){
 /**
  * serve the dev environment
  */
-gulp.task('serve-dev',['bower-copy'],function(){
+gulp.task('serve-dev',['bower-copy', "npm-copy"],function(){
 	serve(config.env.dev);
 });
 
@@ -36,9 +36,19 @@ gulp.task('serve-dev',['bower-copy'],function(){
 gulp.task('clean-dev', function(){
 	return $.del.sync(['./src/lib/**/*']);
 });
- 
+
+ /**
+ * Copies the npm dependencies from the node_modules dir
+ */
+gulp.task("npm-copy", function(){
+	gulp.src("./node_modules/angular-ui-bootstrap/dist/*.js")
+		.pipe(gulp.dest("./src/lib/js"));
+
+});
+
 /**
- *	Copies the dev bower dependencies from the bower_components dir for dependency injection
+ * TODO: Migrate this to NPM...
+ * Copies the dev bower dependencies from the bower_components dir for dependency injection
  * Note that the js / css dependencies are included
  * in the return statement placing the synchronous dependency on the last task executed
  */

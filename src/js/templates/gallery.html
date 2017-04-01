@@ -15,8 +15,8 @@
                     </div>
                     <div class="transparency"></div>
                 </div>
-                
-                <img ng-src="{{eachImg.path}}"/>
+
+                <img ng-class="{'pan' : eachImg.pan, 'standard' : !eachImg.pan}" ng-src="{{eachImg.path}}"/>
                 
             </div>
         </div>
@@ -34,12 +34,12 @@
 
         <div ng-class="{'carouselImg' : true, 'showImgCarousel' : vm.showCarousel()}">
          
-            <div class="title carouselText" ng-show="vm.showCarousel() && vm.getImagePosition()==0">
+            <!--<div class="title carouselText" ng-show="vm.showCarousel() && vm.getImagePosition()==0">
                 {{vm.selectedImage[0].title}}
             </div>
             <div class="title carouselText" ng-show="vm.showCarousel() && vm.getImagePosition()==1">
                 {{vm.selectedImage[1].title}}
-            </div>
+            </div>-->
          
             <img 
                 ng-class="{ 'carouselImg': true, 'carouselImgNext' : vm.nextImage, 'carouselImgPrevious' : vm.previousImage}" 
@@ -58,13 +58,13 @@
                 ng-click="vm.clicked()" 
                 ng-src="{{vm.selectedImage[1].path}}"/>
         </div>
-        
+
         <div class="desc carouselText" ng-show="vm.showCarousel() && vm.getImagePosition()==0">
-            {{vm.selectedImage[0].desc}}
+           <span class="title">{{vm.selectedImage[0].title}}</span> - {{vm.selectedImage[0].desc}}
         </div>
-         
+
         <div class="desc carouselText" ng-show="vm.showCarousel() && vm.getImagePosition()==1">
-            {{vm.selectedImage[1].desc}}
+            <span class="title">{{vm.selectedImage[1].title}}</span> - {{vm.selectedImage[1].desc}}
          </div>
          
     </div>

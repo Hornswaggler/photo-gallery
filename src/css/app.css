@@ -11,9 +11,20 @@ body, div, img{
 }
 
 h2 {
-  font: 100 30px/30px 'Pacifico', Helvetica, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   color: #ffffff;
   text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
+}
+
+.modal-header, .modal-footer{
+    background-color:#000000;
+    color:#ffffff;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.modal-body{
+    background-image: url("../img/footer_lodyas.png");
+    color:#ffffff;
 }
 
 .header .transparency, .header .position{
@@ -59,7 +70,8 @@ h2 {
 
 .header .menu li a {
     color:#ffffff;
-    font: 100 20px/30px 'Pacifico', Helvetica, sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.5em;
     padding:0px 10px;
     text-decoration:none;
 }
@@ -120,8 +132,12 @@ h2 {
     opacity:.5;
 }
 
-.imageFrame img{
+.imageFrame .standard{
     width:100%;
+}
+
+.imageFrame .pan{
+    height:100%;
 }
 
 .imageFrame .imageText{
@@ -137,7 +153,8 @@ h2 {
     right:0;
     left:0;
     top:10px;
-    font: 100 25px/30px 'Pacifico', Helvetica, sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.5em;
     text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
 }
 
@@ -146,7 +163,7 @@ h2 {
     right:0;
     left:0;
     bottom:10px;
-    font: 100 20px/30px 'Pacifico', Helvetica, sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
 }
 
@@ -246,17 +263,8 @@ h2 {
 }
 
 .carousel .title{
-    text-align:center;
-    width: 75%;
-    position: fixed;
-    left: 50%;
-    margin-left: -37.5%;
-    z-index:40;
-    color:white;
-    top:0;
-    margin-top:5%;
-    font: 100 30px/30px 'Pacifico', Helvetica, sans-serif;
-    text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
+    font-size:1.4em;
+    font-style: normal;
 }
 
 .carousel .desc{
@@ -268,8 +276,10 @@ h2 {
     z-index:40;
     color:white;
     bottom:0;
-    margin-bottom:5%;
-    font: 100 20px/30px 'Pacifico', Helvetica, sans-serif;
+    margin-bottom:1%;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size:1.7em;
+    font-style: italic;
     text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
 }
 
@@ -294,7 +304,7 @@ h2 {
 @media only screen  and (max-width: 600px), only screen and (max-device-width: 600px) {
 
     h2{
-        font: 100 22px/30px 'Pacifico', Helvetica, sans-serif;
+        font-family: 'Source Sans Pro', sans-serif;
         color: #ffffff;
         text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
     }
