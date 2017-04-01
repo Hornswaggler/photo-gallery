@@ -62,6 +62,7 @@ h2 {
 .header .menu{
     padding: 0;
     float:right;
+    margin-top:16px;
 }
 
 .header .menu li{
@@ -305,10 +306,20 @@ h2 {
 
     h2{
         font-family: 'Source Sans Pro', sans-serif;
+        font-size:1.3em;
         color: #ffffff;
         text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
     }
     
+    .header .menu li a {
+        font-size: 1.2em;  
+    }
+
+    .header .menu{
+        margin-top:10px;
+    }
+
+
     .imageFrame{
        width:100%;
     }
